@@ -1,6 +1,6 @@
 parameters:
     errorFormat: table
-    level: 5
+    level: 9
     paths:
         - %currentWorkingDirectory%/src
     bootstrapFiles:

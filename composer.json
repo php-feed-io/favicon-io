@@ -6,8 +6,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Alexandre Debril",
-            "email": "alex.debril@gmail.com"
+            "name": "Benjamin Brahmer",
+            "email": "info@b-brahmer.de"
         }
     ],
     "require": {
@@ -24,7 +24,7 @@
         "psr-4": {"FaviconIo\\": "tests/FaviconIo"}
     },
     "scripts": {
-        "src:php-stan": "./vendor/bin/phpstan analyse src/ --level 5",
+        "src:php-stan": "./vendor/bin/phpstan analyse src/ --level 9",
         "src:test": "./vendor/bin/phpunit"
     },
     "config": {
