@@ -1,0 +1,35 @@
+{
+    "name": "php-feed-io/favicon-io",
+    "description": "PHP library for fetching favicons",
+    "keywords": ["favicon", "fetch", "icon"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benjamin Brahmer",
+            "email": "info@b-brahmer.de"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {"FeedIo\\FaviconIo\\": "src/FaviconIo"}
+    },
+    "autoload-dev": {
+        "psr-4": {"FeedIo\\FaviconIo\\": "tests/FaviconIo"}
+    },
+    "scripts": {
+        "src:php-stan": "./vendor/bin/phpstan analyse src/ --level 9",
+        "src:test": "./vendor/bin/phpunit"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        }
+    }
+}

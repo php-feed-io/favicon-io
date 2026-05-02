@@ -1,0 +1,6 @@
+artifacts/
+vendor/
+.phpunit.result.cache
+phpunit.xml
+.vscode/
+phpstan.neon

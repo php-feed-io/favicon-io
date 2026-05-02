@@ -1,0 +1,7 @@
+parameters:
+    errorFormat: table
+    level: 9
+    paths:
+        - %currentWorkingDirectory%/src
+    bootstrapFiles:
+        - %currentWorkingDirectory%/vendor/autoload.php
