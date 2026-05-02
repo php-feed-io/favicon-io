@@ -31,7 +31,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Psr16Cache;
 
 // ---------------------------------------------------------------------------
-// 1. Logger — Monolog writing INFO+ to stdout
+// 1. Logger — Monolog writing DEBUG+ to stdout
 // ---------------------------------------------------------------------------
 $logger = new Logger('feed+favicon', [
     new StreamHandler('php://stdout', Level::Debug),
