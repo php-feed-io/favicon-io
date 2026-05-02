@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FaviconIo;
+namespace FeedIo\FaviconIo;
 
 use PHPUnit\Framework\TestCase;
 

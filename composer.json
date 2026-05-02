@@ -18,10 +18,10 @@
         "phpstan/phpstan": "^2.1"
     },
     "autoload": {
-        "psr-4": {"FaviconIo\\": "src/FaviconIo"}
+        "psr-4": {"FeedIo\\FaviconIo\\": "src/FaviconIo"}
     },
     "autoload-dev": {
-        "psr-4": {"FaviconIo\\": "tests/FaviconIo"}
+        "psr-4": {"FeedIo\\FaviconIo\\": "tests/FaviconIo"}
     },
     "scripts": {
         "src:php-stan": "./vendor/bin/phpstan analyse src/ --level 9",

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FaviconIo;
+namespace FeedIo\FaviconIo;
 
 /**
  * Represents a favicon resource fetched from a website.
