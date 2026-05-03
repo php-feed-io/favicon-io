@@ -94,6 +94,9 @@ if (!is_array($parsed) || empty($parsed['host'])) {
     exit(1);
 }
 $siteUrl = ($parsed['scheme'] ?? 'https') . '://' . $parsed['host'];
+if (isset($parsed['port'])) {
+    $siteUrl .= ':' . $parsed['port'];
+}
 
 $faviconUrl = $faviconDiscovery->discover($siteUrl);
 echo "Favicon URL: " . ($faviconUrl ?? '(none found)') . "\n\n";

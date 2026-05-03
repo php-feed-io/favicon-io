@@ -171,6 +171,30 @@ class FaviconDiscoveryTest extends TestCase
         $this->assertSame('https://example.com/icon.png', $result2);
     }
 
+    public function testTrailingSlashNormalisedForCacheKey(): void
+    {
+        $html = '<html><head><link rel="icon" href="/icon.png"></head></html>';
+
+        // First discover() call (no trailing slash) — cache miss → HTTP hit → stores result.
+        // Second discover() call (with trailing slash) — same normalised key → cache hit → no HTTP.
+        $this->cache
+            ->expects($this->exactly(2))
+            ->method('get')
+            ->willReturnOnConsecutiveCalls(null, 'https://example.com/icon.png');
+        $this->cache->expects($this->once())->method('set');
+
+        $this->httpClient
+            ->expects($this->once()) // only ONE HTTP request for both discover() calls
+            ->method('sendRequest')
+            ->willReturn($this->makeHtmlResponse($html));
+
+        $result1 = $this->discovery->discover('https://example.com');
+        $result2 = $this->discovery->discover('https://example.com/');
+
+        $this->assertSame('https://example.com/icon.png', $result1);
+        $this->assertSame('https://example.com/icon.png', $result2);
+    }
+
     // -------------------------------------------------------------------------
     // Priority 1: apple-touch-icon
     // -------------------------------------------------------------------------

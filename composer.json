@@ -12,19 +12,17 @@
     ],
     "require": {
         "php": ">=8.2",
+        "ext-dom": "*",
+        "ext-libxml": "*",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.1",
-        "psr/http-message": "^2.0"
-    },
-    "suggest": {
-        "psr/simple-cache": "Provide a PSR-16 cache to avoid re-discovering favicons on every call",
-        "psr/log": "Provide a PSR-3 logger to receive debug-level HTTP error messages"
+        "psr/http-message": "^2.0",
+        "psr/simple-cache": "^3.0",
+        "psr/log": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0",
         "phpstan/phpstan": "^2.1",
-        "psr/simple-cache": "^3.0",
-        "psr/log": "^3.0",
         "nyholm/psr7": "^1.8"
     },
     "autoload": {
