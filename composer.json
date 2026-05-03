@@ -17,8 +17,8 @@
         "psr/http-message": "^2.0"
     },
     "suggest": {
-        "psr/simple-cache": "^3.0 — provide a PSR-16 cache to avoid re-discovering favicons on every call",
-        "psr/log": "^3.0 — provide a PSR-3 logger to receive debug-level HTTP error messages"
+        "psr/simple-cache": "Provide a PSR-16 cache to avoid re-discovering favicons on every call",
+        "psr/log": "Provide a PSR-3 logger to receive debug-level HTTP error messages"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0",

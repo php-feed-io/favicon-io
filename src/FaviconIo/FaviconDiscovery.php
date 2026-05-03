@@ -59,6 +59,10 @@ class FaviconDiscovery
      */
     public function discover(string $baseUrl): ?string
     {
+        // Normalise trailing slashes so "https://example.com" and
+        // "https://example.com/" map to the same cache key and discovery run.
+        $baseUrl = rtrim($baseUrl, '/');
+
         if ($this->cache === null) {
             return $this->doDiscover($baseUrl);
         }
@@ -281,11 +285,11 @@ class FaviconDiscovery
                 return null;
             }
 
-            $body = (string) $response->getBody();
-            if (strlen($body) > $this->pageBodyCap) {
-                $body = substr($body, 0, $this->pageBodyCap);
+            $stream = $response->getBody();
+            if ($stream->isSeekable()) {
+                $stream->rewind();
             }
-            return $body;
+            return $stream->read($this->pageBodyCap);
         } catch (\Throwable $e) {
             $this->logger?->debug(
                 'FaviconDiscovery: could not fetch homepage {url}: {error}',

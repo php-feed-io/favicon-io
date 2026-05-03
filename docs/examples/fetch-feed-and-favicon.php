@@ -88,8 +88,12 @@ echo "Feed title : " . ($feed->getTitle() ?? '(unknown)') . "\n";
 
 // Derive the site origin (scheme + host) from the feed URL so we probe the
 // right domain for the favicon.
-$parsed  = parse_url($feedUrl);
-$siteUrl = ($parsed['scheme'] ?? 'https') . '://' . ($parsed['host'] ?? '');
+$parsed = parse_url($feedUrl);
+if (!is_array($parsed) || empty($parsed['host'])) {
+    echo "Error: could not parse a valid host from feed URL '{$feedUrl}'\n";
+    exit(1);
+}
+$siteUrl = ($parsed['scheme'] ?? 'https') . '://' . $parsed['host'];
 
 $faviconUrl = $faviconDiscovery->discover($siteUrl);
 echo "Favicon URL: " . ($faviconUrl ?? '(none found)') . "\n\n";
