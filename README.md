@@ -1,4 +1,5 @@
 # favicon-io
+[![Packagist](https://img.shields.io/packagist/v/php-feed-io/favicon-io.svg)](https://packagist.org/packages/php-feed-io/favicon-io)
 
 A PHP library for discovering favicons from websites, built on [PSR-18 (HTTP Client)](https://www.php-fig.org/psr/psr-18/).
 
